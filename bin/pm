@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+set_time_limit(0);
+
+function _includeFile($file)
+{
+    if (file_exists($file)) {
+        return include $file;
+    }
+    return null;
+}
+
+if ((!$loader = _includeFile(__DIR__.'/../vendor/autoload.php')) && (!$loader = _includeFile(__DIR__.'/../../../autoload.php'))) {
+    die('Composer autoload file not found' . PHP_EOL);
+}
+
+echo "Test PM\n";
