@@ -10,11 +10,18 @@ use Symfony\Component\Console\Command\Command;
  */
 class StartCommand extends Command
 {
+    protected static $defaultName = 'start';
+
+    public function __construct(?string $name = null)
+    {
+        parent::__construct($name);
+        $this->setDescription('Start application');
+    }
+
     /**
      * @inheritdoc
      */
-    public function configure()
+    protected function configure()
     {
-        $this->setName('start')->setDescription('Start application');
     }
 }
