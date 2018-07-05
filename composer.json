@@ -20,7 +20,8 @@
         "ext-pcntl":"*",
         "digit-soft/re-action": "*",
         "mkraemer/react-pcntl": "^3.0",
-        "symfony/console": "^4.0"
+        "symfony/console": "^4.0",
+        "symfony/process": "^4.0"
     },
     "require-dev": {},
     "autoload": {
