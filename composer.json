@@ -1,0 +1,29 @@
+{
+    "name": "digit-soft/re-action-pm",
+    "version": "0.1.0",
+    "description": "Re-action framework process manager",
+    "keywords": ["digit-soft", "reactphp", "re-action", "process manager", "re-action process manager"],
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/digit-soft/re-action-pm/issues",
+        "source": "https://github.com/digit-soft/re-action-pm"
+    },
+    "authors": [
+        {
+            "name": "Digit",
+            "email": "digit.vova@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0",
+        "ext-pcntl":"*",
+        "digit-soft/re-action": "*"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "Reaction\\PM\\": "src/"
+        }
+    }
+}
