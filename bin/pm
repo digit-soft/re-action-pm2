@@ -15,4 +15,13 @@ if ((!$loader = _includeFile(__DIR__.'/../vendor/autoload.php')) && (!$loader = 
     die('Composer autoload file not found' . PHP_EOL);
 }
 
-echo "Test PM\n";
+$manager = new \Reaction\PM\Manager('re-action-pm');
+
+\Reaction\Helpers\ClassFinderHelper::setLoader($loader);
+$commands = \Reaction\Helpers\ClassFinderHelper::findClassesPsr4('Reaction\PM\Commands');
+
+foreach ($commands as $commandStr) {
+    $manager->add(new $commandStr());
+}
+
+$manager->run();

@@ -2,11 +2,13 @@
 
 namespace Reaction\PM;
 
+use Symfony\Component\Console\Application;
+
 /**
  * Class Manager
  * @package Reaction\PM
  */
-class Manager
+class Manager extends Application
 {
 
 }
