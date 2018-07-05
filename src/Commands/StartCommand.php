@@ -3,6 +3,9 @@
 namespace Reaction\PM\Commands;
 
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Class StartCommand
@@ -10,18 +13,26 @@ use Symfony\Component\Console\Command\Command;
  */
 class StartCommand extends Command
 {
-    protected static $defaultName = 'start';
+    use ConfigTrait;
 
-    public function __construct(?string $name = null)
-    {
-        parent::__construct($name);
-        $this->setDescription('Start application');
-    }
+    protected static $defaultName = 'start';
 
     /**
      * @inheritdoc
      */
     protected function configure()
     {
+        $this->configurePMOptions($this);
+        $this->setDescription('Start application')
+            ->addArgument('working-directory', InputArgument::OPTIONAL, 'Working directory', './');
+    }
+
+    /**
+     * @inheritdoc
+     */
+    protected function execute(InputInterface $input, OutputInterface $output)
+    {
+        $config = $this->initializeConfig($input, $output);
+
     }
 }
