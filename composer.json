@@ -18,7 +18,8 @@
     "require": {
         "php": ">=7.0",
         "ext-pcntl":"*",
-        "digit-soft/re-action": "*"
+        "digit-soft/re-action": "*",
+        "mkraemer/react-pcntl": "^3.0.*"
     },
     "require-dev": {},
     "autoload": {
